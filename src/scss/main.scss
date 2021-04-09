@@ -1,13 +1,148 @@
 @import "~normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600&display=swap");
+
 
 @import "_variables";
 @import "modules/hello.scss";
 
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
 body {
-  background: $wtf;
-  color: #fff;
+  background-color: #6F7D8C;
+  color: white;
+  font-family: 'Baloo Thambi 2';
+}
+
+.waterApp {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
+
+  &__tittle {
+  font-size: 38px;
+  margin-top: 0px;
+}
+
+  &__svg {
+  display: block;
+  max-width: 236px;
+  max-height: 236px;
+  margin-top: 32px;
+}
+
+  &__numbers {
+  font-size: 80px;
+  font-weight: 600;
+  position: relative;
+  bottom: 135px;
+}
+
+  &__button {
+  display: block;
+  width: 164px;
+  height: 38px;
+  margin: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  border-style: none;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  color: white;
+  &--add {
+    background-color: #50C1E9;
+    margin-top: 0px;
+  }
+  &--remove {
+    background-color: #ec544d;
+  }
+}
+
+  &__buttons{
+  margin-bottom: 22px;
+}
+  &__info{
+    left: 140px;
+    height: 22px;
+  width: 22px;
+  position: relative;
+  top: 6px;
+  }
+  &__history{
+    padding: 0;
+    left: 148px;
+    margin-right: 16px;
+    position: relative;
+    top: 6px;
+    background: none;
+    border: none;
+    &--img{
+      height: 22px;
+      width: 22px;
+    }
+  }
+}
+
+
+
+.info {
+  &__tittle {
+    text-align: center;
+    font-size: 2rem;
+  }
+  &__articel{
+    margin: 1.5rem 2rem;
+    padding: 1rem;
+    border: solid;
+    border-radius: 32px;
+  
+    &--div{
+      display: flex;
+      justify-content: center;
+    }
+    &--button{
+    display: block;
+    width: 164px;
+    height: 38px;
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 15px;
+    outline: none;
+    color: #fff;
+    background-color: #50C1E9;
+    }
+  }
+}
+
+.button__link {
+  text-decoration: none;
+}
+
+.table--js {
+  background: #fff;
+  width: 280px;
+  height: 516px;
+  z-index: 999;
+  position: absolute;
+}
+
+@media only screen and (max-device-width: 825px) {
+  .info__tittle{
+    font-size: 1.75rem;
+  }
+
+
 }
