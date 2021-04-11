@@ -10,6 +10,7 @@ registerSW();
 
 console.log('HELLO 🚀')
 
+
 // add queryselector to button add
 const addButton = document.querySelector('.waterApp__button--add');
 // add queryselector to button remove
@@ -18,6 +19,7 @@ const removeButton = document.querySelector('.waterApp__button--remove');
 const glassCounter = document.querySelector('.waterApp__numbers');
 //current data 
 const key = new Date().toLocaleString().slice(0, 10);
+
 
 let currentCounter = 0;
 
@@ -39,6 +41,8 @@ addButton.addEventListener('click', () => {
   }
 })
 
+glassCounter.innerHTML = currentCounter;
+
 removeButton.addEventListener('click', () => {
   if (currentCounter > 0) {
   currentCounter--;
@@ -52,5 +56,13 @@ removeButton.addEventListener('click', () => {
 
  historyButton.addEventListener('click', () => {
   const table = document.querySelector('.table')
+
   table.classList.toggle('table--js')
 })
+
+
+//na click na button pobierz dane z local storage wyswietl je w postaci tabelki
+  //event listner
+  //pobrać dane z local storage 
+  //wyswietl tabelke
+
