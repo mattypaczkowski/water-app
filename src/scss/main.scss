@@ -135,11 +135,13 @@ body {
 
 .table--js {
   background: #fff;
-  width: 280px;
+  width: 252px;
   height: 516px;
   z-index: 999;
   position: absolute;
   display: block;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .history {

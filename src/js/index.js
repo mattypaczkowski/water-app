@@ -17,6 +17,10 @@ const addButton = document.querySelector('.waterApp__button--add');
 const removeButton = document.querySelector('.waterApp__button--remove');
 // add queryselector to count numbers
 const glassCounter = document.querySelector('.waterApp__numbers');
+
+const historyButton = document.querySelector('.waterApp__history--js')
+
+const table = document.querySelector('.table--js')
 //current data 
 const key = new Date().toLocaleString().slice(0, 10);
 
@@ -25,13 +29,14 @@ let currentCounter = 0;
 
 const localStorageValue = localStorage.getItem(key);
 
+
+
 if (localStorageValue) {
  currentCounter = localStorageValue;
 } else {
   localStorage.setItem(key, 0);
 }
 
-glassCounter.innerHTML = currentCounter;
 
 addButton.addEventListener('click', () => {
   if (currentCounter < 99) {
@@ -41,7 +46,6 @@ addButton.addEventListener('click', () => {
   }
 })
 
-glassCounter.innerHTML = currentCounter;
 
 removeButton.addEventListener('click', () => {
   if (currentCounter > 0) {
@@ -51,18 +55,19 @@ removeButton.addEventListener('click', () => {
   }
  })
 
-
- const historyButton = document.querySelector('.waterApp__history--js')
-
- historyButton.addEventListener('click', () => {
+  historyButton.addEventListener('click', () => {
   const table = document.querySelector('.table')
-
   table.classList.toggle('table--js')
 })
 
+if (table) {
+  for (let i = 0; i < localStorage.lenght; i++) {
+    let value = localStorage.getItem(localStorage.key(i));
+    const myTable = `<tr class="history__table--row table__row--js">
+                            <td>${localStorage.key(i)}</td>
+                            <td>${value}</td>
+                          </tr>`;
+    table.innerHTML += myTable;
 
-//na click na button pobierz dane z local storage wyswietl je w postaci tabelki
-  //event listner
-  //pobrać dane z local storage 
-  //wyswietl tabelke
-
+  }
+}
